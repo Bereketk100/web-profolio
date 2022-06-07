@@ -1,0 +1,80 @@
+
+body {
+    background-color:black;
+}
+.text_success {
+     color: blue;
+     text-align:center; 
+    }
+
+.text_fail {
+     color: red;
+     text-align:center; 
+    }
+
+.text_bool {
+    color:aqua; 
+    text-align: center;
+}
+
+.hello {
+    text-align: center;
+}
+
+.navigationBar { // style the entire div 
+
+    text-align: center;
+    overflow: hidden;
+}
+
+.navigationBar a button {
+    border: 0px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}
+
+
+.navigationBar a:hover {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 408px;
+    height:500px;
+  }
+
+.microsoft {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 708px;
+    height:300px;
+
+}
+
+
+
+
+
+
+
+
+
+
