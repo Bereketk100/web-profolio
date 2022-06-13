@@ -1,0 +1,110 @@
+// === Variables =====
+$perspective:     60rem;
+$split-position:  49%;
+$split-thickness: 4px;
+$split-color:     #ff0000;
+
+// === Settings =====
+%font-settings {
+  font-family: "Gilroy ExtraBold", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+// === Menu <ul> =====
+.Menu-list {
+  font-size: 400%;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(0%, -50%);
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; 
+color: rgb(255, 255, 255);}
+
+
+// === Menu item =====
+.Menu-list-item {
+  color: white;
+  position: relative;
+  color: transparent;
+  cursor: pointer;
+
+  
+  // === Split Line =====
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $split-position;
+    left: -10%;
+    right: -10%;
+    height: $split-thickness;
+    border-radius: $split-thickness;
+    margin-top: -($split-thickness / 2);
+    background: $split-color;
+    transform: scale(0);
+    transition: transform .8s cubic-bezier(.16,1.08,.38,.98);
+    z-index: 1;
+  }
+}
+
+// === Top/bottom mask =====
+.Mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: $split-color;
+  top: 0;
+  height: $split-position;
+  transition: all .8s cubic-bezier(.16,1.08,.38,.98);
+  
+  span { display: block; }
+}
+
+// === Bottom mask specific =====
+.Mask + .Mask {
+  top: $split-position - 0.1;
+  height: 100 - $split-position + 0.1;
+
+  span { transform: translateY(-$split-position); }
+}
+
+// === Where the fun stuff happens =====
+.Menu-list-item:hover,
+.Menu-list-item:active {
+  .Mask { color: #FFF; transform: skewX(12deg) translateX(5px); }
+  .Mask + .Mask { transform: skewX(12deg) translateX(-5px); }
+  &::before { transform: scale(1); }
+}
+
+.bitmoji {
+    transform: translate(1%, -12%);
+    width: 20%;
+    height: 20%;
+}
+
+/* Resize images */
+.bitmoji img {
+    width: 240%;
+    height: auto;
+}
+
+.Menu-list-item a{
+    color: white;
+}
